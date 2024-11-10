@@ -1,0 +1,60 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.pot
+*.py[cod]
+*$py.class
+
+# Virtualenv
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Django-specific files
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Static files (optional, if you don’t want to include them)
+static/
+media/
+
+# Django migrations
+**/migrations/*.py
+**/migrations/*.pyc
+**/migrations/*.pyo
+
+# Configuration files
+*.env
+*.local
+*.yml
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# PyCharm specific files
+.idea/
+
