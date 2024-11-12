@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver</title>
+    <style>
+
+        * {
+          margin:0;
+          padding:0;
+          box-sizing: boarder-box;
+        }
+
+        header {
+            background-color: #2b2a29;
+            font-family: "FF Mark W05", Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: normal;
+            text-align: left;
+            padding: 1.5rem;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            boarder: 0;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e7e6e3;
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;  /* Change color on hover */
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .big-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin:20px
+        }
+
+        .big-button:hover {
+            background-color: darkred;
+        }
+
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (Header) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'generate_combinations' %}">Generate</a></li>
+                <li><a href="{% url 'display_combinations' %}">Combinations</a></li>
+                <li><a href="{% url 'selenium_driver' %}">Driver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <h1>Activate Selenium Driver</h1>
+
+    <form method="post" action="{% url 'selenium_driver' %}">
+        {% csrf_token %}
+        <button type="submit" class="big-button">ACTIVATE!!</button>
+    </form>
+
+    {% if success %}
+        <div class="message">
+            <p>Driver executed!</p>
+        </div>
+    {% endif %}
+
+</body>
+</html>
